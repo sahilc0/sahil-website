@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter, Manrope } from "next/font/google";
+import { Agentation } from "agentation";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -37,6 +38,7 @@ export default function RootLayout({
         className={`${fraunces.variable} ${inter.variable} ${manrope.variable} antialiased`}
       >
         {children}
+        {process.env.NODE_ENV === "development" && <Agentation />}
       </body>
     </html>
   );

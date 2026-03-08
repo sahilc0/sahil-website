@@ -7,6 +7,7 @@ interface TickerProps {
   speed?: number;
   gap?: number;
   pauseOnHover?: boolean;
+  hoverSlowFactor?: number;
   className?: string;
 }
 
@@ -14,27 +15,33 @@ export function Ticker({
   children,
   speed = 60,
   gap = 0,
-  pauseOnHover = true,
+  pauseOnHover = false,
+  hoverSlowFactor,
   className = "",
 }: TickerProps) {
-  const [isPaused, setIsPaused] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const duration = `${100 / (speed / 60)}s`;
+  const baseDuration = 100 / (speed / 60);
+  const duration = isHovered && hoverSlowFactor
+    ? baseDuration / hoverSlowFactor
+    : baseDuration;
+
+  const shouldPause = isHovered && pauseOnHover && !hoverSlowFactor;
 
   return (
     <div
       ref={containerRef}
       className={`overflow-hidden ${className}`}
-      onMouseEnter={() => pauseOnHover && setIsPaused(true)}
-      onMouseLeave={() => pauseOnHover && setIsPaused(false)}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <div
         className="flex w-max"
         style={{
           gap: `${gap}px`,
-          animation: `ticker ${duration} linear infinite`,
-          animationPlayState: isPaused ? "paused" : "running",
+          animation: `ticker ${duration}s linear infinite`,
+          animationPlayState: shouldPause ? "paused" : "running",
         }}
       >
         <div className="flex shrink-0" style={{ gap: `${gap}px` }}>
