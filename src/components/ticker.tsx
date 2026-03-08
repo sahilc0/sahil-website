@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useEffect, useCallback } from "react";
 
 interface TickerProps {
   children: React.ReactNode;
@@ -19,30 +19,91 @@ export function Ticker({
   hoverSlowFactor,
   className = "",
 }: TickerProps) {
-  const [isHovered, setIsHovered] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const outerRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const offsetRef = useRef(0);
+  const currentSpeedRef = useRef(speed);
+  const targetSpeedRef = useRef(speed);
+  const lastTimeRef = useRef(0);
+  const rafRef = useRef<number>(0);
 
-  const baseDuration = 100 / (speed / 60);
-  const duration = isHovered && hoverSlowFactor
-    ? baseDuration / hoverSlowFactor
-    : baseDuration;
+  const animate = useCallback(
+    (time: number) => {
+      if (!trackRef.current) return;
 
-  const shouldPause = isHovered && pauseOnHover && !hoverSlowFactor;
+      if (lastTimeRef.current === 0) {
+        lastTimeRef.current = time;
+        rafRef.current = requestAnimationFrame(animate);
+        return;
+      }
+
+      const delta = (time - lastTimeRef.current) / 1000;
+      lastTimeRef.current = time;
+
+      // Lerp current speed toward target speed for smooth transitions
+      const lerpFactor = 1 - Math.pow(0.001, delta);
+      currentSpeedRef.current +=
+        (targetSpeedRef.current - currentSpeedRef.current) * lerpFactor;
+
+      // Advance offset (speed is in px/s)
+      offsetRef.current += currentSpeedRef.current * delta;
+
+      // Get width of one copy of the children to know when to loop
+      const firstChild = trackRef.current.children[0] as HTMLElement | null;
+      if (firstChild) {
+        const halfWidth = firstChild.offsetWidth;
+        if (halfWidth > 0 && offsetRef.current >= halfWidth) {
+          offsetRef.current -= halfWidth;
+        }
+      }
+
+      // Use translate3d for GPU-accelerated compositing
+      trackRef.current.style.transform = `translate3d(-${offsetRef.current}px, 0, 0)`;
+
+      rafRef.current = requestAnimationFrame(animate);
+    },
+    []
+  );
+
+  useEffect(() => {
+    targetSpeedRef.current = speed;
+    currentSpeedRef.current = speed;
+  }, [speed]);
+
+  useEffect(() => {
+    rafRef.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [animate]);
+
+  const handleMouseEnter = useCallback(() => {
+    if (pauseOnHover && !hoverSlowFactor) {
+      targetSpeedRef.current = 0;
+    } else if (hoverSlowFactor) {
+      targetSpeedRef.current = speed * hoverSlowFactor;
+    }
+  }, [pauseOnHover, hoverSlowFactor, speed]);
+
+  const handleMouseLeave = useCallback(() => {
+    targetSpeedRef.current = speed;
+  }, [speed]);
 
   return (
     <div
-      ref={containerRef}
+      ref={outerRef}
       className={`overflow-hidden ${className}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      style={{
+        maskImage:
+          "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+        WebkitMaskImage:
+          "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+      }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <div
-        className="flex w-max"
-        style={{
-          gap: `${gap}px`,
-          animation: `ticker ${duration}s linear infinite`,
-          animationPlayState: shouldPause ? "paused" : "running",
-        }}
+        ref={trackRef}
+        className="flex w-max will-change-transform"
+        style={{ gap: `${gap}px` }}
       >
         <div className="flex shrink-0" style={{ gap: `${gap}px` }}>
           {children}
@@ -51,16 +112,6 @@ export function Ticker({
           {children}
         </div>
       </div>
-      <style jsx>{`
-        @keyframes ticker {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-      `}</style>
     </div>
   );
 }

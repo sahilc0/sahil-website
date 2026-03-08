@@ -23,7 +23,7 @@ export function CaseStudies() {
             <Link
               key={study.slug}
               href={`/blog/${study.slug}`}
-              className="group flex flex-col gap-[40px] rounded-[20px] bg-white p-[40px] transition-shadow hover:shadow-lg"
+              className="group flex flex-col gap-[40px] rounded-[20px] bg-white p-[40px] transition-all duration-200 ease-[ease] hover:shadow-lg hover:-translate-y-0.5"
             >
               <div
                 className="relative overflow-hidden rounded-[15px]"
@@ -33,16 +33,10 @@ export function CaseStudies() {
                   src={study.image}
                   alt={study.title}
                   fill
-                  className="object-cover transition-transform group-hover:scale-[1.02]"
+                  className="object-cover transition-transform duration-200 ease-[ease] group-hover:scale-[1.02]"
                 />
               </div>
               <div className="flex flex-col gap-3">
-                <span
-                  className="font-body text-[16px] font-extrabold uppercase leading-[1.5em] tracking-[1px]"
-                  style={{ color: study.accentColor }}
-                >
-                  {study.category}
-                </span>
                 <h3 className="font-heading text-[24px] font-medium leading-[1.4em] tracking-[-0.5px] text-text">
                   {study.title}
                 </h3>

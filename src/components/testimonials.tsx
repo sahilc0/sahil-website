@@ -16,14 +16,14 @@ export function Testimonials() {
         </FadeIn>
 
         <FadeIn delay={0.15} className="w-full max-w-[1000px]">
-          <Ticker speed={60} gap={0} pauseOnHover hoverSlowFactor={0.4}>
+          <Ticker speed={60} gap={20} pauseOnHover hoverSlowFactor={0.4}>
             {testimonials.map((t) => (
               <a
                 key={t.name}
                 href={t.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-[260px] w-[320px] shrink-0 flex-col justify-between gap-5 rounded-[20px] bg-white p-[40px] transition-shadow hover:shadow-md"
+                className="flex h-[416px] w-[428px] shrink-0 flex-col justify-between overflow-hidden rounded-[20px] bg-white p-[40px] transition-all duration-200 ease-[ease] hover:shadow-lg hover:-translate-y-0.5"
               >
                 <p className="font-body text-[18px] font-medium leading-[1.7em] text-text-light">
                   {t.quote}

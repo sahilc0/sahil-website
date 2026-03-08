@@ -21,14 +21,14 @@
 body {
   background: var(--color-background);
   color: var(--color-text);
-  font-family: var(--font-body), sans-serif;
+  font-family: var(--font-inter), sans-serif;
 }
 
 /* Article content styles for case studies */
 .article-content h2 {
-  font-family: var(--font-heading), serif;
+  font-family: var(--font-fraunces), serif;
   font-weight: 500;
-  font-size: 40px;
+  font-size: 48px;
   line-height: 1.3em;
   letter-spacing: -1px;
   margin-top: 60px;
@@ -37,18 +37,48 @@ body {
 }
 
 .article-content h3 {
-  font-family: var(--font-heading), serif;
+  font-family: var(--font-fraunces), serif;
   font-weight: 500;
-  font-size: 24px;
-  line-height: 1.4em;
-  letter-spacing: -0.5px;
+  font-size: 40px;
+  line-height: 1.3em;
+  letter-spacing: -1px;
   margin-top: 40px;
   margin-bottom: 16px;
   color: var(--color-text);
 }
 
+.article-content h4 {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.4em;
+  color: #333;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+.article-content h5 {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.4em;
+  color: #333;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+.article-content h6 {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.4em;
+  color: #333;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
 .article-content p {
-  font-family: var(--font-body), sans-serif;
+  font-family: var(--font-inter), sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.7em;
@@ -65,7 +95,7 @@ body {
 
 .article-content ul,
 .article-content ol {
-  font-family: var(--font-body), sans-serif;
+  font-family: var(--font-inter), sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.7em;
@@ -83,7 +113,31 @@ body {
   color: var(--color-text);
 }
 
+.article-content em {
+  font-style: italic;
+  color: var(--color-text-light);
+}
+
 .article-content a {
   color: var(--color-primary);
   text-decoration: underline;
+}
+
+/* Card hover effect — shared across interactive cards */
+.card-hover {
+  box-shadow: 0 1px 2px rgba(25, 21, 78, 0.04), 0 0 0 1px rgba(25, 21, 78, 0.03);
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card-hover:hover {
+    box-shadow: 0 8px 30px rgba(25, 21, 78, 0.08), 0 2px 8px rgba(25, 21, 78, 0.04);
+    transform: translateY(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-hover {
+    transition: none;
+  }
 }

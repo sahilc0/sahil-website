@@ -45,7 +45,7 @@ export default async function CaseStudyPage({
       <main className="bg-white">
         {/* Article header */}
         <div className="mx-auto max-w-[1200px] px-[50px] pt-[150px] pb-[50px] max-md:px-6">
-          <div className="flex flex-col gap-[30px]">
+          <div className="flex flex-col items-center gap-[30px] text-center">
             <span
               className="font-body text-[16px] font-extrabold uppercase leading-[1.5em] tracking-[1px]"
               style={{ color: study.accentColor }}
@@ -65,7 +65,7 @@ export default async function CaseStudyPage({
         </div>
 
         {/* Article content */}
-        <div className="mx-auto max-w-[1200px] px-[50px] pb-[100px] max-md:px-6">
+        <div className="mx-auto max-w-[700px] px-[50px] pb-[100px] max-md:px-6">
           <div
             className="article-content"
             dangerouslySetInnerHTML={{ __html: study.content }}

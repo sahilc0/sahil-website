@@ -96,13 +96,12 @@ export function ContactFooter() {
           </div>
 
           {/* Image */}
-          <div className="min-w-[200px] flex-1 overflow-hidden rounded-[20px]">
+          <div className="relative min-w-[200px] flex-1 h-[343px] overflow-hidden rounded-[20px]">
             <Image
               src="/images/footer.jpg"
               alt="Sahil at work"
-              width={660}
-              height={417}
-              className="h-auto w-[110%] max-w-none object-cover"
+              fill
+              className="object-cover"
             />
           </div>
         </FadeIn>
