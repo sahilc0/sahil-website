@@ -33,8 +33,8 @@ const images = [
 export function Talks() {
   return (
     <section id="talks" className="px-[100px] py-[100px] max-md:px-6">
-      <FadeIn className="mx-auto flex max-w-[1200px] flex-col items-center gap-[100px] lg:flex-row">
-        <div className="flex flex-1 flex-col gap-5">
+      <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-[100px] lg:flex-row">
+        <FadeIn className="flex flex-1 flex-col gap-5">
           <h2 className="font-heading text-[48px] font-medium leading-[1.3em] tracking-[-1px] text-text max-md:text-[36px]">
             Public appearances
           </h2>
@@ -44,11 +44,11 @@ export function Talks() {
             conferences and events, from TABConf in Atlanta, to Bitcoin Park in
             Nashville, to Bitcoin4India in Mumbai, India.
           </p>
-        </div>
-        <div className="flex-1">
+        </FadeIn>
+        <FadeIn delay={0.15} className="flex-1">
           <Carousel images={images} interval={6000} borderRadius={24} />
-        </div>
-      </FadeIn>
+        </FadeIn>
+      </div>
     </section>
   );
 }

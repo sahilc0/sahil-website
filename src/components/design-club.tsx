@@ -27,11 +27,11 @@ const images = [
 export function DesignClub() {
   return (
     <section className="px-[100px] py-[100px] max-md:px-6">
-      <FadeIn className="mx-auto flex max-w-[1200px] flex-col items-center gap-[100px] lg:flex-row">
-        <div className="flex-1">
+      <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-[100px] lg:flex-row">
+        <FadeIn className="flex-1">
           <Carousel images={images} interval={6000} />
-        </div>
-        <div className="flex flex-1 flex-col gap-5">
+        </FadeIn>
+        <FadeIn delay={0.15} className="flex flex-1 flex-col gap-5">
           <h2 className="font-heading text-[48px] font-medium leading-[1.3em] tracking-[-1px] text-text max-md:text-[36px]">
             Austin Bitcoin Design Club
           </h2>
@@ -40,8 +40,8 @@ export function DesignClub() {
             education, and design critiques. We get 30-50 people every month!
             Hosted in the Bitcoin Commons in downtown Austin, TX.
           </p>
-        </div>
-      </FadeIn>
+        </FadeIn>
+      </div>
     </section>
   );
 }

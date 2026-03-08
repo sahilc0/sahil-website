@@ -108,7 +108,7 @@ export function ContactFooter() {
         </FadeIn>
 
         {/* Skills ticker */}
-        <div className="w-full">
+        <FadeIn delay={0.15} className="w-full">
           <Ticker speed={35} gap={0} pauseOnHover={false}>
             {skills.map((skill) => (
               <span
@@ -119,7 +119,7 @@ export function ContactFooter() {
               </span>
             ))}
           </Ticker>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );

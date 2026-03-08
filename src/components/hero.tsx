@@ -133,7 +133,7 @@ export function Hero() {
           </FadeIn>
 
           {/* Profile image */}
-          <FadeIn delay={0.2} className="flex-1">
+          <FadeIn delay={0.15} className="flex-1">
             <Image
               src="/images/profile.jpg"
               alt="Sahil Chaturvedi"
@@ -146,7 +146,7 @@ export function Hero() {
         </div>
 
         {/* Logos */}
-        <div className="mx-auto w-full max-w-[1200px] overflow-hidden p-[10px]">
+        <FadeIn delay={0.3} className="mx-auto w-full max-w-[1200px] overflow-hidden p-[10px]">
           <div className="flex flex-wrap items-center justify-center gap-[60px] opacity-40">
             {logos.map((logo) => (
               <Image
@@ -160,7 +160,7 @@ export function Hero() {
               />
             ))}
           </div>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );

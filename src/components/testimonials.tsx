@@ -15,7 +15,7 @@ export function Testimonials() {
           </h2>
         </FadeIn>
 
-        <div className="w-full max-w-[1000px]">
+        <FadeIn delay={0.15} className="w-full max-w-[1000px]">
           <Ticker speed={60} gap={0} pauseOnHover hoverSlowFactor={0.4}>
             {testimonials.map((t) => (
               <a
@@ -48,7 +48,7 @@ export function Testimonials() {
               </a>
             ))}
           </Ticker>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );

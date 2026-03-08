@@ -18,7 +18,7 @@ export function CaseStudies() {
           </p>
         </FadeIn>
 
-        <FadeIn className="grid w-full grid-cols-1 gap-5 md:grid-cols-2">
+        <FadeIn delay={0.15} className="grid w-full grid-cols-1 gap-5 md:grid-cols-2">
           {caseStudies.map((study) => (
             <Link
               key={study.slug}

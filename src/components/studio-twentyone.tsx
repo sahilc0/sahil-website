@@ -85,7 +85,7 @@ export function StudioTwentyone() {
         </FadeIn>
 
         {/* Feature cards */}
-        <FadeIn className="grid w-full max-w-[1100px] grid-cols-1 gap-5 md:grid-cols-2">
+        <FadeIn delay={0.15} className="grid w-full max-w-[1100px] grid-cols-1 gap-5 md:grid-cols-2">
           {features.map((feature) => (
             <div
               key={feature.title}
@@ -111,7 +111,7 @@ export function StudioTwentyone() {
         </FadeIn>
 
         {/* Client work ticker */}
-        <div className="w-full max-w-[1200px]">
+        <FadeIn delay={0.3} className="w-full max-w-[1200px]">
           <Ticker speed={100} gap={10} pauseOnHover>
             {workPairs.map((pair, i) => (
               <div key={i} className="flex shrink-0 gap-[10px]">
@@ -133,7 +133,7 @@ export function StudioTwentyone() {
               </div>
             ))}
           </Ticker>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );
