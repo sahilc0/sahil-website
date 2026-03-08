@@ -1,9 +1,20 @@
+"use client";
+
 import Image from "next/image";
 import {
   ArrowRight,
   TwitterLogo,
   LinkedinLogo,
 } from "@phosphor-icons/react/dist/ssr";
+import { FadeIn } from "./fade-in";
+
+const logos = [
+  { src: "/images/logo-fedi.png", alt: "Fedi", width: 192, height: 37 },
+  { src: "/images/logo-onramp.png", alt: "Onramp", width: 116, height: 31 },
+  { src: "/images/logo-fold.png", alt: "Fold", width: 143, height: 62 },
+  { src: "/images/logo-mutiny.png", alt: "Mutiny", width: 123, height: 41 },
+  { src: "/images/logo-zeus.png", alt: "Zeus", width: 84, height: 33 },
+];
 
 export function Hero() {
   return (
@@ -11,10 +22,11 @@ export function Hero() {
       {/* Subtle gradient background */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-primary-light/60 via-white/0 to-transparent" />
 
-      <div className="relative mx-auto max-w-[1200px] px-6 pt-[200px] pb-[100px]">
-        <div className="flex flex-col items-center gap-[100px] lg:flex-row lg:items-start">
+      <div className="relative flex flex-col items-center gap-[100px] px-[100px] pt-[200px] pb-[100px] max-md:px-6">
+        {/* Hero content */}
+        <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center gap-[100px] lg:flex-row lg:items-start">
           {/* Text column */}
-          <div className="flex max-w-[600px] flex-col gap-5">
+          <FadeIn className="flex max-w-[600px] flex-1 flex-col gap-5">
             <h1 className="max-w-[400px] font-heading text-[68px] font-medium leading-[1.1em] tracking-[-1.5px] text-text max-md:text-[44px]">
               Sahil
               <br />
@@ -118,18 +130,35 @@ export function Hero() {
                 </svg>
               </a>
             </div>
-          </div>
+          </FadeIn>
 
           {/* Profile image */}
-          <div className="shrink-0">
+          <FadeIn delay={0.2} className="flex-1">
             <Image
               src="/images/profile.jpg"
               alt="Sahil Chaturvedi"
               width={415}
               height={415}
-              className="rounded-full object-cover"
+              className="aspect-square w-full max-w-[415px] rounded-full object-cover lg:max-w-none"
               priority
             />
+          </FadeIn>
+        </div>
+
+        {/* Logos */}
+        <div className="mx-auto w-full max-w-[1200px] overflow-hidden p-[10px]">
+          <div className="flex flex-wrap items-center justify-center gap-[60px] opacity-40">
+            {logos.map((logo) => (
+              <Image
+                key={logo.alt}
+                src={logo.src}
+                alt={logo.alt}
+                width={logo.width}
+                height={logo.height}
+                style={{ width: logo.width, height: logo.height }}
+                className="object-contain"
+              />
+            ))}
           </div>
         </div>
       </div>
