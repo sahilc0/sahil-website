@@ -7,24 +7,40 @@ const fraunces = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],
   weight: ["400", "500"],
+  display: "swap",
 });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "500", "800"],
+  display: "swap",
 });
 
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
   weight: ["600", "700", "800"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sahilc.com"),
   title: "Sahil Chaturvedi",
   description:
     "Product designer in Austin. Founding Designer @ Ark Labs. Previously Unchained & Foundry.",
+  openGraph: {
+    title: "Sahil Chaturvedi",
+    description:
+      "Product designer in Austin. Founding Designer @ Ark Labs. Previously Unchained & Foundry.",
+    url: "https://sahilc.com",
+    siteName: "Sahil Chaturvedi",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    creator: "@sahilc0",
+  },
 };
 
 export default function RootLayout({

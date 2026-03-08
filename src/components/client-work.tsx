@@ -5,20 +5,20 @@ import { Ticker } from "./ticker";
 
 const workPairs = [
   {
-    mobile: { src: "/images/work-1-mobile.gif", width: 274, height: 610 },
-    desktop: { src: "/images/work-1-desktop.png", width: 777, height: 610 },
+    mobile: { src: "/images/work-1-mobile.webp", width: 274, height: 610 },
+    desktop: { src: "/images/work-1-desktop.webp", width: 777, height: 610 },
   },
   {
     mobile: { src: "/images/work-2-mobile.gif", width: 274, height: 610 },
-    desktop: { src: "/images/work-2-desktop.png", width: 777, height: 610 },
+    desktop: { src: "/images/work-2-desktop.webp", width: 777, height: 610 },
   },
   {
     mobile: { src: "/images/work-3-mobile.gif", width: 285, height: 609 },
-    desktop: { src: "/images/work-3-desktop.png", width: 777, height: 610 },
+    desktop: { src: "/images/work-3-desktop.webp", width: 777, height: 610 },
   },
   {
     mobile: { src: "/images/work-4-mobile.gif", width: 274, height: 610 },
-    desktop: { src: "/images/work-4-desktop.png", width: 777, height: 610 },
+    desktop: { src: "/images/work-4-desktop.webp", width: 777, height: 610 },
   },
 ];
 

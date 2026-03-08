@@ -59,6 +59,7 @@ export function Carousel({
               src={images[current].src}
               alt={images[current].alt}
               fill
+              sizes="(max-width: 768px) 100vw, 600px"
               className="object-cover"
             />
           </motion.div>

@@ -33,6 +33,7 @@ export function CaseStudies() {
                   src={study.image}
                   alt={study.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 550px"
                   className="object-cover transition-transform duration-200 ease-[ease] group-hover:scale-[1.02]"
                 />
               </div>

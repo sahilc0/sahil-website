@@ -5,25 +5,25 @@ import { FadeIn } from "./fade-in";
 
 const images = [
   {
-    src: "/images/talks-1.png",
+    src: "/images/talks-1.webp",
     alt: "Speaking at a bitcoin conference",
     width: 1208,
     height: 906,
   },
   {
-    src: "/images/talks-2.png",
+    src: "/images/talks-2.webp",
     alt: "Presenting at a bitcoin event",
     width: 1091,
     height: 817,
   },
   {
-    src: "/images/talks-3.png",
+    src: "/images/talks-3.webp",
     alt: "Talk at Bitcoin Park",
     width: 806,
     height: 454,
   },
   {
-    src: "/images/talks-4.png",
+    src: "/images/talks-4.webp",
     alt: "Speaking engagement",
     width: 815,
     height: 454,

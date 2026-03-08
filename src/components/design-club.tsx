@@ -5,19 +5,19 @@ import { FadeIn } from "./fade-in";
 
 const images = [
   {
-    src: "/images/club-1.png",
+    src: "/images/club-1.webp",
     alt: "Austin Bitcoin Design Club event",
     width: 681,
     height: 454,
   },
   {
-    src: "/images/club-2.png",
+    src: "/images/club-2.webp",
     alt: "Austin Bitcoin Design Club meetup",
     width: 429,
     height: 454,
   },
   {
-    src: "/images/club-3.png",
+    src: "/images/club-3.webp",
     alt: "Austin Bitcoin Design Club presentation",
     width: 681,
     height: 454,

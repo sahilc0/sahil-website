@@ -23,9 +23,9 @@ export const caseStudies: CaseStudy[] = [
     content: `
 <h2>Context</h2>
 
-<img src="/images/fedi-1.png" alt="Fedi project backlog overview" />
+<img src="/images/fedi-1.webp" alt="Fedi project backlog overview" />
 
-<img src="/images/fedi-2.png" alt="Fedi branding" />
+<img src="/images/fedi-2.webp" alt="Fedi branding" />
 
 <p>Fedi is an all in one social bitcoin app. It has messaging, apps, a bitcoin wallet, and a focus on community custody.</p>
 
@@ -37,7 +37,7 @@ export const caseStudies: CaseStudy[] = [
 
 <h2>Dynamic Strings</h2>
 
-<img src="/images/fedi-3.png" alt="Dynamic strings overview" />
+<img src="/images/fedi-3.webp" alt="Dynamic strings overview" />
 
 <h4>Challenge</h4>
 
@@ -59,15 +59,15 @@ export const caseStudies: CaseStudy[] = [
 
 <p>I wanted to see how other applications handled this challenge. Apple\u2019s iMessage has a similar function, as seen below.</p>
 
-<img src="/images/fedi-6.png" alt="iMessage link preview inspiration" />
+<img src="/images/fedi-6.webp" alt="iMessage link preview inspiration" />
 
 <h6>Exploration</h6>
 
 <p>Here, I began trying a bunch of different visual representations of the Dynamic Message, pulling levers like background color, size, action style, and more. (s/o to Skyler for the analogy)</p>
 
-<img src="/images/fedi-7.png" alt="Exploration variations" />
+<img src="/images/fedi-7.webp" alt="Exploration variations" />
 
-<img src="/images/fedi-8.png" alt="Content width analogy" />
+<img src="/images/fedi-8.webp" alt="Content width analogy" />
 
 <p>To come to a decision, we landed on two principles:</p>
 
@@ -85,11 +85,11 @@ export const caseStudies: CaseStudy[] = [
 
 <p>I found that the status of the string was best represented as an eyebrow on top. This also allowed for a quick action, if any (for example, copying the raw string).</p>
 
-<img src="/images/fedi-11.png" alt="Design spec hero" />
+<img src="/images/fedi-11.webp" alt="Design spec hero" />
 
-<img src="/images/fedi-12.png" alt="Dynamic message variants" />
+<img src="/images/fedi-12.webp" alt="Dynamic message variants" />
 
-<img src="/images/fedi-13.png" alt="Anatomy breakdown" />
+<img src="/images/fedi-13.webp" alt="Anatomy breakdown" />
 
 <p>In the design spec, I made sure to include variations of different Dynamic Messages, including both send and receive. I also broke down the anatomy of a Dynamic Message to make it easily digestible for the engineer that picks up this project in the future.</p>
 `,
@@ -102,10 +102,10 @@ export const caseStudies: CaseStudy[] = [
     date: "Apr 14, 2023",
     category: "Case study",
     accentColor: "#6172F3",
-    image: "/images/case-wallet.png",
+    image: "/images/case-wallet.webp",
     featured: true,
     content: `
-<img src="/images/wallet-1.png" alt="Wallet history overview" />
+<img src="/images/wallet-1.webp" alt="Wallet history overview" />
 
 <p><em>Wallet history \u2014 a timeline of keyset changes</em></p>
 
@@ -115,7 +115,7 @@ export const caseStudies: CaseStudy[] = [
 <h3>First \u2014 what are vaults?</h3>
 <p>At Unchained, we would obsess over the client experience when it comes to their bitcoin vault security. Unchained vaults allow clients to safely secure their bitcoin, with no single points of failure \u2014 requiring 2 out of 3 keys to \u201cunlock\u201d their vault, and spend their bitcoin. Unchained always holds 1 key as a backup, in case clients have one of their keys compromised.</p>
 
-<img src="/images/wallet-2.png" alt="Unchained vaults overview" />
+<img src="/images/wallet-2.webp" alt="Unchained vaults overview" />
 <p><em>Source: Unchained blog</em></p>
 
 <h3>Discovery, research, and the challenges</h3>
@@ -130,7 +130,7 @@ export const caseStudies: CaseStudy[] = [
 
 <h3>Solution exploration</h3>
 
-<img src="/images/wallet-3.png" alt="Birds-eye view of explorations" />
+<img src="/images/wallet-3.webp" alt="Birds-eye view of explorations" />
 <p><em>Birds-eye view of different explorations and iterations</em></p>
 
 <h4>First few rounds of iterations</h4>
@@ -138,12 +138,12 @@ export const caseStudies: CaseStudy[] = [
 
 <p>For the first couple rounds of exploratory iterations, the consistent feedback I was getting from our bitcoin engineers was that 1) these stacked, multiple banners were getting too complex and 2) they weren\u2019t mapping to the correct mental model of a history of wallets.</p>
 
-<img src="/images/wallet-4.png" alt="First rounds of iterations" />
+<img src="/images/wallet-4.webp" alt="First rounds of iterations" />
 
 <p>Generating many sub-variants of this wallet selection view allowed me to get feedback from the design team on composition and layout, and feedback from engineering on matching the mental model to the wallet code. This eventually led to the timeline view.</p>
 
-<img src="/images/wallet-5.png" alt="Sub-variants exploration" />
-<img src="/images/wallet-6.png" alt="Evaluation iterations" />
+<img src="/images/wallet-5.webp" alt="Sub-variants exploration" />
+<img src="/images/wallet-6.webp" alt="Evaluation iterations" />
 
 <h4>Evaluation of variations</h4>
 <p>Each variation had pros and cons. For example, one of the variants was very simple and easy to implement technically, but didn\u2019t scale to handle multiple wallets well. That variant also didn\u2019t map well to a mental model of \u201chistory\u201d. Getting the design team\u2019s feedback, it also felt too cramped in terms of visual composition.</p>
@@ -151,21 +151,21 @@ export const caseStudies: CaseStudy[] = [
 <h3>Solution</h3>
 <p>With the new wallet history feature, vaults now retain the transaction history, just like a bank account, even through key replacements. Clients get a consistent, continuous experience for records of transactions and vault statements, across all the old and new wallets that make up their vault.</p>
 
-<img src="/images/wallet-1.png" alt="Wallet history solution" />
+<img src="/images/wallet-1.webp" alt="Wallet history solution" />
 
 <p>Clients also get notifications that alert them to any bitcoin sent to an old address, secured by a potentially compromised key. Like any good partner, Unchained helps guide them through recovering those funds to a new wallet that they control, and help cosign the transfer if necessary.</p>
 
-<img src="/images/wallet-7.png" alt="Warning banner for old wallet" />
+<img src="/images/wallet-7.webp" alt="Warning banner for old wallet" />
 <p><em>Warning banner if an old wallet has received money</em></p>
 
 <p>Additionally, I chose to truncate and disable addresses that are discouraged from depositing to:</p>
 
-<img src="/images/wallet-8.png" alt="Truncated addresses" />
+<img src="/images/wallet-8.webp" alt="Truncated addresses" />
 <p><em>Truncated addresses, that discourage depositing.</em></p>
 
 <p>Bitcoin is a multi-generational asset. Over a lifetime, accidents happen, and clients are inevitably going to need to replace keys that secure their vault. With the launch of the Wallet history feature, otherwise nerve-wracking tasks like performing a key replacement, or recovering funds from an old address, become routine instead of a hectic scramble.</p>
 
-<img src="/images/wallet-9.png" alt="Design spec for dev handoff" />
+<img src="/images/wallet-9.webp" alt="Design spec for dev handoff" />
 <p><em>Design spec ready for dev handoff!</em></p>
 `,
   },
@@ -176,7 +176,7 @@ export const caseStudies: CaseStudy[] = [
     date: "Apr 14, 2023",
     category: "Case study",
     accentColor: "#3DA1FF",
-    image: "/images/case-hardware.png",
+    image: "/images/case-hardware.webp",
     featured: false,
     content: `
 <h3>Role</h3>
@@ -193,7 +193,7 @@ export const caseStudies: CaseStudy[] = [
 <p>Using hardware keys that are not manufactured or designed by Unchained present some experience challenges. The most popular devices require plugging into your computer via USB, and often have browser compatibility issues.</p>
 <p>Also, frustratingly, Trezor devices open a new tab any time you interact with them. Which brings up the question \u2014 how do we guide users to follow instructions on-platform, then follow instructions off-platform, and remember to come back on platform to complete further instructions?</p>
 
-<img src="/images/hardware-2.png" alt="Trezor new tab issue" />
+<img src="/images/hardware-2.webp" alt="Trezor new tab issue" />
 <p><em>Trezor frustratingly sending users off-platform to export public keys.</em></p>
 
 <h4>Asynchronous QR codes and microSD</h4>
@@ -205,23 +205,23 @@ export const caseStudies: CaseStudy[] = [
 <p>What I was looking to build was a step by step guide for clients to use their device. Often times devices have specific initialization steps that can be confusing to follow, so I wanted to make sure those were clear.</p>
 <p>The first round of iterations, I thought the vault registration should happen right as part of the vault creation flow, immediately after creating it.</p>
 
-<img src="/images/hardware-3.png" alt="Exploration iterations" />
+<img src="/images/hardware-3.webp" alt="Exploration iterations" />
 
 <p>What I learned after talking to our concierge support team (internal stakeholders) was that there are times when clients may have more than two devices that they need to link, so this fixed step would likely not fit client needs. Additionally, the fact that this step was only required when spending bitcoin, but not for receiving bitcoin, made the concierge team\u2019s feedback even more relevant.</p>
 <p>For confirming address on device using USB, I had a few variants that I narrowed down using internal user testing. When I had two, I went to Twitter (to a pulse from the bitcoin community) and incorporated feedback.</p>
 
-<img src="/images/hardware-4.png" alt="Twitter community feedback" />
+<img src="/images/hardware-4.webp" alt="Twitter community feedback" />
 
 <h3>Solution</h3>
 
 <h4>Device registration (Async microSD card communication)</h4>
 <p>Based on this feedback from the concierge team, I found that it made more sense to cut down onboarding time, send clients right to their vault, and have them register as needed.</p>
 
-<img src="/images/hardware-5.png" alt="Register vault on devices banner" />
+<img src="/images/hardware-5.webp" alt="Register vault on devices banner" />
 
 <p>Once clients would go to register their device, they would be met with the following steps:</p>
 
-<img src="/images/hardware-6.png" alt="Device registration flow" />
+<img src="/images/hardware-6.webp" alt="Device registration flow" />
 
 <p>A few things to point out here:</p>
 <ul>
@@ -250,7 +250,7 @@ export const caseStudies: CaseStudy[] = [
     date: "Jul 20, 2021",
     category: "Case study",
     accentColor: "#4ECCCF",
-    image: "/images/case-uds.png",
+    image: "/images/case-uds.webp",
     featured: false,
     content: `
 <p>UDS is used to power most features. I worked with engineering to set up Storybook components. Happy to chat more about this!</p>
