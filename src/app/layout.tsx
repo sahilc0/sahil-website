@@ -29,6 +29,16 @@ export const metadata: Metadata = {
   title: "Sahil Chaturvedi",
   description:
     "Product designer in Austin. Founding Designer @ Ark Labs. Previously Unchained & Foundry.",
+  keywords: [
+    "crypto design",
+    "bitcoin design",
+    "product designer",
+    "UX designer",
+    "fintech design",
+    "Sahil Chaturvedi",
+    "Ark Labs",
+    "Unchained",
+  ],
   openGraph: {
     title: "Sahil Chaturvedi",
     description:
@@ -36,10 +46,12 @@ export const metadata: Metadata = {
     url: "https://sahilc.com",
     siteName: "Sahil Chaturvedi",
     type: "website",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Sahil Chaturvedi — Product Designer" }],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     creator: "@sahilc0",
+    images: ["/og.png"],
   },
 };
 

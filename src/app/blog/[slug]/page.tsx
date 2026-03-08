@@ -23,6 +23,13 @@ export function generateMetadata({
     return {
       title: `${study.title} - Sahil Chaturvedi`,
       description: study.description,
+      alternates: { canonical: `/blog/${study.slug}` },
+      openGraph: {
+        type: "article",
+        title: `${study.title} - Sahil Chaturvedi`,
+        description: study.description,
+        publishedTime: new Date(study.date).toISOString(),
+      },
     };
   });
 }
@@ -39,10 +46,28 @@ export default async function CaseStudyPage({
     notFound();
   }
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: study.title,
+    description: study.description,
+    datePublished: new Date(study.date).toISOString(),
+    author: {
+      "@type": "Person",
+      name: "Sahil Chaturvedi",
+      url: "https://sahilc.com",
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <Nav />
       <main className="bg-white">
+        <article>
         {/* Article header */}
         <div className="mx-auto max-w-[1200px] px-[50px] pt-[150px] pb-[50px] max-md:px-6">
           <div className="flex flex-col items-center gap-[30px] text-center">
@@ -71,6 +96,7 @@ export default async function CaseStudyPage({
             dangerouslySetInnerHTML={{ __html: study.content }}
           />
         </div>
+        </article>
 
         {/* Author footer */}
         <div className="bg-primary-light px-[100px] py-[100px] max-md:px-6">
