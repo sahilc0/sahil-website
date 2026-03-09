@@ -45,7 +45,7 @@ export function Talks() {
             Nashville, to Bitcoin4India in Mumbai, India.
           </p>
         </FadeIn>
-        <FadeIn delay={0.15} className="flex-1">
+        <FadeIn delay={0.15} className="w-full flex-1">
           <Carousel images={images} interval={6000} borderRadius={24} />
         </FadeIn>
       </div>

@@ -28,7 +28,7 @@ export function DesignClub() {
   return (
     <section className="px-[100px] py-[100px] max-md:px-6">
       <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-[100px] lg:flex-row">
-        <FadeIn className="flex-1">
+        <FadeIn className="w-full flex-1">
           <Carousel images={images} interval={6000} />
         </FadeIn>
         <FadeIn delay={0.15} className="flex flex-1 flex-col gap-5">

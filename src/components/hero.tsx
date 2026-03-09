@@ -133,7 +133,7 @@ export function Hero() {
           </FadeIn>
 
           {/* Profile image */}
-          <FadeIn delay={0.15} className="flex-1">
+          <FadeIn delay={0.15} className="order-first flex-1 lg:order-none">
             <Image
               src="/images/profile.jpg"
               alt="Sahil Chaturvedi"
